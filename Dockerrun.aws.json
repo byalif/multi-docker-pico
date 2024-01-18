@@ -1,5 +1,5 @@
 {
-    "AWSEBDockerrunVersion": 1,
+    "AWSEBDockerrunVersion": 2,
     "containerDefinitions": [
         {
             "name": "front",
@@ -27,7 +27,7 @@
                 }
             
             ],
-            "links": ["app", "server"],
+            "links": ["front", "server"],
             "memory": 128
         }
     ]
