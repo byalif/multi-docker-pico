@@ -18,7 +18,7 @@ import com.byalif.App.model.registerModel;
 import com.byalif.App.service.UserService;
 
 @RestController
-@CrossOrigin(origins = "https://picogram.netlify.app", allowedHeaders = "*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UserController {
 
 	@Autowired

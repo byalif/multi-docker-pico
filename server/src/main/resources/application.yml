@@ -1,18 +1,18 @@
-server:
-   port: 8082
+# server:
+#    port: 8082
    
 spring:
    datasource:
-      url: jdbc:mysql://us-cdbr-east-05.cleardb.net:3306/heroku_a058beb0e931455
-      username: b0dfe016074ba7
-      password: 30d693a5
+      url: jdbc:mysql://mysqldb:3306/picog
+      username: root
+      password: password
       driver-class-name: com.mysql.cj.jdbc.Driver
    jpa:
       show-sql: true
       hibernate:
          ddl-auto: update
-   hikari:
-      maxLifetime: 20000
+   # hikari:
+   #    maxLifetime: 20000
  
         
     
