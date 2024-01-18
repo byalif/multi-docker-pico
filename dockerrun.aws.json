@@ -1,0 +1,31 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "front",
+            "image": "beatsbyalif/pico-front",
+            "hostname": "front",
+            "essential": false
+        },
+        {
+            "name": "server",
+            "image": "beatsbyalif/pico-server",
+            "hostname": "api",
+            "essential": false
+        },
+        {
+            "name": "nginx",
+            "image": "beatsbyalif/pico-nginx",
+            "hostname": "nginx",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            
+            ],
+            "links": ["app", "server"]
+        }
+    ]
+}
