@@ -5,13 +5,15 @@
             "name": "front",
             "image": "beatsbyalif/pico-front",
             "hostname": "front",
-            "essential": false
+            "essential": false,
+            "memory": 128
         },
         {
             "name": "server",
             "image": "beatsbyalif/pico-server",
             "hostname": "api",
-            "essential": false
+            "essential": false,
+            "memory": 128
         },
         {
             "name": "nginx",
@@ -25,7 +27,8 @@
                 }
             
             ],
-            "links": ["app", "server"]
+            "links": ["app", "server"],
+            "memory": 128
         }
     ]
 }
