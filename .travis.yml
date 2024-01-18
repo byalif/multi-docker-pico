@@ -19,14 +19,14 @@ after_success:
   - docker push beatsbyalif/pico-server
   - docker push beatsbyalif/pico-nginx
 
-# deploy:
-#   provider: elasticbeanstalk
-#   region: "us-east-2"
-#   app: "pico"
-#   env: "Pico-env"
-#   bucket_name: "elasticbeanstalk-us-east-2-246211615161"
-#   bucket_path: "pico"
-#   on:
-#     branch: main
-#   access_key_id: $AWS_ACCESS_KEY
-#   secret_access_key: $AWS_SECRET_KEY
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "pico"
+  env: "Pico-env"
+  bucket_name: "elasticbeanstalk-us-east-2-246211615161"
+  bucket_path: "pico"
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
