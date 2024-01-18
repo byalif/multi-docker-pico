@@ -3,11 +3,11 @@ version: "3.8"
 services:
   nginx:
     restart: always
-    build: beatsbyalif/pico-nginx
+    image: beatsbyalif/pico-nginx
     ports:
       - 80:80
   app:
-    build: beatsbyalif/pico-front
+    image: beatsbyalif/pico-front
     ports:
       - 3000:3000
   mysqldb:
@@ -15,18 +15,16 @@ services:
     image: mysql:5.7
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: $MYSQLDB_ROOT_PASSWORD
-      MYSQL_DATABASE: $MYSQLDB_DATABASE
-      MYSQLDB_USER: $MYSQLDB_USER
-      MYSQLDB_ROOT_PASSWORD: $MYSQLDB_ROOT_PASSWORD
-    ports:
-      - 3306:3306
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: picogram
+      MYSQLDB_USER: root
+      MYSQLDB_ROOT_PASSWORD: password
     volumes:
       - db:/var/lib/mysql
   api:
     depends_on:
       - mysqldb
-    build: beatsbyalif/pico-server
+    image: beatsbyalif/pico-server
     restart: on-failure
     ports:
       - 8080:8080
