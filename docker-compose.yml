@@ -4,15 +4,14 @@ services:
   nginx:
     restart: always
     image: beatsbyalif/pico-nginx
+    depends_on:
+      - api
+      - front
     ports:
       - 80:80
   front:
-    container_name: front
-    hostname: front
     image: beatsbyalif/pico-front
   api:
-    container_name: api
-    hostname: api
     image: beatsbyalif/pico-server
     restart: on-failure
     stdin_open: true
