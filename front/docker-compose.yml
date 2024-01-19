@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  front:
+    image: beatsbyalif/pico-front
+    container_name: front
+    hostname: front
+    ports:
+      - 80:80
