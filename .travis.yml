@@ -23,7 +23,7 @@ deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
   app: "dock-multi"
-  env: "Dock-multi-env"
+  env: "Dock-multi-env "
   bucket_name: "elasticbeanstalk-us-east-2-246211615161"
   bucket_path: "dock-multi"
   on:
