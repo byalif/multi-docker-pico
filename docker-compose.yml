@@ -10,26 +10,10 @@ services:
     image: beatsbyalif/pico-front
     ports:
       - 3000:3000
-  mysqldb:
-    platform: linux/x86_64
-    image: mysql:5.7
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: picogram
-      MYSQLDB_USER: root
-      MYSQLDB_ROOT_PASSWORD: password
-    volumes:
-      - db:/var/lib/mysql
   api:
-    depends_on:
-      - mysqldb
     image: beatsbyalif/pico-server
     restart: on-failure
     ports:
       - 8080:8080
     stdin_open: true
     tty: true
-
-volumes:
-  db:

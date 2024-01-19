@@ -22,10 +22,10 @@ after_success:
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
-  app: "pico-g"
-  env: "Pico-g-env"
+  app: "pico-front"
+  env: "Pico-front-env"
   bucket_name: "elasticbeanstalk-us-east-2-246211615161"
-  bucket_path: "pico-g"
+  bucket_path: "pico-front"
   on:
     branch: main
   access_key_id: $AWS_ACCESS_KEY

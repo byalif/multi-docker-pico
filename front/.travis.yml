@@ -1,0 +1,21 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t byalif/pico-front -f DockerFile.dev .
+
+script:
+  - docker run -e CI=true byalif/pico-front npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "Pico-front"
+  env: "Pico-front-env"
+  bucket_name: "elasticbeanstalk-us-east-2-246211615161"
+  bucket_path: "Pico-front"
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
